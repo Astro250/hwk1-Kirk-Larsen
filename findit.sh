@@ -11,4 +11,8 @@
 #
 
 dir=$1
-
+cd $dir
+if [ ! -d "$dir" ]; then
+   echo "$dir doesn't exist."
+fi
+ls *.{cat,fits} | cut -d. -f1-3 | uniq -u
